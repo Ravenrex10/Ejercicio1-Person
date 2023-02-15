@@ -7,7 +7,7 @@ import java.util.List;
 */
 
 public class Person {
-    private final String name;
+    private final String name;1
     private final int age;
     private final String gender;
 
@@ -30,6 +30,23 @@ public class Person {
     }
 
     public double[] avarageAgePerGender(List<Person> persons) {
-        return null;
+        int sumaEdadesHombre;
+        int sumaEdadesMujer;
+        int numHombres;
+        int numMujeres;
+        for persona Person in persons{
+            if(persona.gender().equals("H")){
+                sumaEdadesHombre+=persona.age();
+                numHombres++;
+            }else{
+                sumaEdadesMujer+=persona.age();
+                numMujeres++;
+            }
+        }
+        double[] res;
+        res[0]=sumaEdadesHombre/numHombres;
+        res[1] = sumaEdadesMujer/numMujeres;
+
+        return res;
     }
 }
