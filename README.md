@@ -12,5 +12,5 @@ Casos de Prueba: <br>
         
 
 
-La imagen coverage.png muestra una línea recta por haber hecho merge al final, pero el procedimiento ha sido ir 
+La imagen commits.png muestra una línea recta por haber hecho merge al final, pero el procedimiento ha sido ir 
 trabajando sobre la rama develop y cuando tenía algo funcional hacía merge en el main para tenerlo ahí.
