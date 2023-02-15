@@ -93,27 +93,28 @@ public class PersonTest {
     }
 
     @Test
-    void numeroNegativo(){
+    void edadNegativa(){
         RuntimeException exception = assertThrows(RuntimeException.class, () -> {
-            List<Person> personas = new ArrayList<Person>();
-            personas.add(new Person("Lucas", -1, "H"));
-            personas.add(new Person("Lucia", 30, "M"));
-            double[] value = p.avarageAgePerGender(personas);
+            Person p1 = new Person("Lucas", -1, "H");
         });
-        assertEquals("Numero negativo", exception.getMessage());
+        assertEquals("Edad negativa", exception.getMessage());
     }
 
     @Test
     void generoNoExistente(){
         RuntimeException exception = assertThrows(RuntimeException.class, () -> {
-            List<Person> personas = new ArrayList<Person>();
-            personas.add(new Person("Lucas", 1, "H"));
-            personas.add(new Person("Lucia", 30, "F"));
-            double[] value = p.avarageAgePerGender(personas);
+            Person p1 = new Person("Lucia", 30, "F");
         });
         assertEquals("Genero no existente", exception.getMessage());
     }
 
+    @Test
+    void nombreNulo(){
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> {
+            Person p1 = new Person(null, 30, "M");
+        });
+        assertEquals("Nombre nulo", exception.getMessage());
+    }
     @Test
     void testConstructor(){
         Person p1 = new Person("Lucas", 20, "H");

@@ -12,6 +12,15 @@ public class Person {
     private final String gender;
 
     public Person(String name, int age, String gender){
+        if(name==null){
+            throw new RuntimeException("Nombre nulo");
+        }
+        if(age<0){
+            throw new RuntimeException("Edad negativa");
+        }
+        if(!gender.equals("M") && !gender.equals("H")){
+            throw new RuntimeException("Genero no existente");
+        }
         this.name = name;
         this.age = age;
         this.gender = gender;
@@ -37,12 +46,6 @@ public class Person {
         double mediaHombres;
         double mediaMujeres;
         for (Person persona : persons){
-            if(!persona.gender.equals("M") && !persona.gender.equals("H")){
-                throw new RuntimeException("Genero no existente");
-            }
-            if(persona.age<0){
-                throw new RuntimeException("Numero negativo");
-            }
             if(persona.gender().equals("H")){
                 sumaEdadesHombre+=persona.age();
                 numHombres++;
